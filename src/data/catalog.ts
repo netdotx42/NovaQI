@@ -212,7 +212,7 @@ export function getProduct(slug: string) {
 export const faqs = [
   {
     q: "What am I buying?",
-    a: "Focused digital products: a PDF guide, a browser tool, worksheets, or developer source, depending on the listing. Read the file list and licence on Whop before you pay. Each product is sold separately.",
+    a: "On Whop, each listing is a separate download: a PDF guide, worksheets, or developer source. The six browser tools on this site are a different purchase: $49 once, from My tools. Read the file list on Whop before you pay.",
   },
   {
     q: "Do these tools trade for me?",
@@ -220,7 +220,7 @@ export const faqs = [
   },
   {
     q: "How will I get my downloads?",
-    a: "Buy on the Whop listing. Browser tools on this site run locally in your browser. Guides, worksheets and the Python kits are delivered with the Whop order. This site does not ask for a NovaQI password.",
+    a: "Buy a guide or kit on its Whop listing. Whop delivers those files. The browser tools on this site open after you pay $49 once in My tools. This site does not ask for a NovaQI password.",
   },
   {
     q: "What do I need to run them?",
@@ -232,6 +232,6 @@ export const faqs = [
   },
   {
     q: "What about support, refunds and my data?",
-    a: "Support and refund terms are on the Whop listing. Browser tools store notes in this browser when storage works — export a backup. This site has no payment form. Whop handles checkout on its own pages.",
+    a: "Support and refund terms for Whop downloads are on the Whop listing. The $49 browser-tool payment is handled by Stripe, and Stripe emails the receipt. Tool notes stay in this browser — export a backup. To open the tools on another device, use the same checkout email on My tools.",
   },
 ] as const;

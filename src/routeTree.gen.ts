@@ -13,6 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as PlaybookRouteImport } from './routes/playbook'
 import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as ToolsFileRouteImport } from './routes/tools/$file'
+import { Route as ApiToolsCheckoutRouteImport } from './routes/api/tools/checkout'
+import { Route as ApiToolsConfirmRouteImport } from './routes/api/tools/confirm'
+import { Route as ApiToolsLockRouteImport } from './routes/api/tools/lock'
+import { Route as ApiToolsRestoreRouteImport } from './routes/api/tools/restore'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +39,53 @@ const ProductsSlugRoute = ProductsSlugRouteImport.update({
   path: '/products/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsFileRoute = ToolsFileRouteImport.update({
+  id: '/tools/$file',
+  path: '/tools/$file',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsCheckoutRoute = ApiToolsCheckoutRouteImport.update({
+  id: '/api/tools/checkout',
+  path: '/api/tools/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsConfirmRoute = ApiToolsConfirmRouteImport.update({
+  id: '/api/tools/confirm',
+  path: '/api/tools/confirm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsLockRoute = ApiToolsLockRouteImport.update({
+  id: '/api/tools/lock',
+  path: '/api/tools/lock',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiToolsRestoreRoute = ApiToolsRestoreRouteImport.update({
+  id: '/api/tools/restore',
+  path: '/api/tools/restore',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/library': typeof LibraryRoute
   '/playbook': typeof PlaybookRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/tools/$file': typeof ToolsFileRoute
+  '/api/tools/checkout': typeof ApiToolsCheckoutRoute
+  '/api/tools/confirm': typeof ApiToolsConfirmRoute
+  '/api/tools/lock': typeof ApiToolsLockRoute
+  '/api/tools/restore': typeof ApiToolsRestoreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/library': typeof LibraryRoute
   '/playbook': typeof PlaybookRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/tools/$file': typeof ToolsFileRoute
+  '/api/tools/checkout': typeof ApiToolsCheckoutRoute
+  '/api/tools/confirm': typeof ApiToolsConfirmRoute
+  '/api/tools/lock': typeof ApiToolsLockRoute
+  '/api/tools/restore': typeof ApiToolsRestoreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +93,46 @@ export interface FileRoutesById {
   '/library': typeof LibraryRoute
   '/playbook': typeof PlaybookRoute
   '/products/$slug': typeof ProductsSlugRoute
+  '/tools/$file': typeof ToolsFileRoute
+  '/api/tools/checkout': typeof ApiToolsCheckoutRoute
+  '/api/tools/confirm': typeof ApiToolsConfirmRoute
+  '/api/tools/lock': typeof ApiToolsLockRoute
+  '/api/tools/restore': typeof ApiToolsRestoreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/library' | '/playbook' | '/products/$slug'
+  fullPaths:
+    | '/'
+    | '/library'
+    | '/playbook'
+    | '/products/$slug'
+    | '/tools/$file'
+    | '/api/tools/checkout'
+    | '/api/tools/confirm'
+    | '/api/tools/lock'
+    | '/api/tools/restore'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/library' | '/playbook' | '/products/$slug'
-  id: '__root__' | '/' | '/library' | '/playbook' | '/products/$slug'
+  to:
+    | '/'
+    | '/library'
+    | '/playbook'
+    | '/products/$slug'
+    | '/tools/$file'
+    | '/api/tools/checkout'
+    | '/api/tools/confirm'
+    | '/api/tools/lock'
+    | '/api/tools/restore'
+  id:
+    | '__root__'
+    | '/'
+    | '/library'
+    | '/playbook'
+    | '/products/$slug'
+    | '/tools/$file'
+    | '/api/tools/checkout'
+    | '/api/tools/confirm'
+    | '/api/tools/lock'
+    | '/api/tools/restore'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +140,11 @@ export interface RootRouteChildren {
   LibraryRoute: typeof LibraryRoute
   PlaybookRoute: typeof PlaybookRoute
   ProductsSlugRoute: typeof ProductsSlugRoute
+  ToolsFileRoute: typeof ToolsFileRoute
+  ApiToolsCheckoutRoute: typeof ApiToolsCheckoutRoute
+  ApiToolsConfirmRoute: typeof ApiToolsConfirmRoute
+  ApiToolsLockRoute: typeof ApiToolsLockRoute
+  ApiToolsRestoreRoute: typeof ApiToolsRestoreRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +177,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/$file': {
+      id: '/tools/$file'
+      path: '/tools/$file'
+      fullPath: '/tools/$file'
+      preLoaderRoute: typeof ToolsFileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/checkout': {
+      id: '/api/tools/checkout'
+      path: '/api/tools/checkout'
+      fullPath: '/api/tools/checkout'
+      preLoaderRoute: typeof ApiToolsCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/confirm': {
+      id: '/api/tools/confirm'
+      path: '/api/tools/confirm'
+      fullPath: '/api/tools/confirm'
+      preLoaderRoute: typeof ApiToolsConfirmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/lock': {
+      id: '/api/tools/lock'
+      path: '/api/tools/lock'
+      fullPath: '/api/tools/lock'
+      preLoaderRoute: typeof ApiToolsLockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tools/restore': {
+      id: '/api/tools/restore'
+      path: '/api/tools/restore'
+      fullPath: '/api/tools/restore'
+      preLoaderRoute: typeof ApiToolsRestoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +220,11 @@ const rootRouteChildren: RootRouteChildren = {
   LibraryRoute: LibraryRoute,
   PlaybookRoute: PlaybookRoute,
   ProductsSlugRoute: ProductsSlugRoute,
+  ToolsFileRoute: ToolsFileRoute,
+  ApiToolsCheckoutRoute: ApiToolsCheckoutRoute,
+  ApiToolsConfirmRoute: ApiToolsConfirmRoute,
+  ApiToolsLockRoute: ApiToolsLockRoute,
+  ApiToolsRestoreRoute: ApiToolsRestoreRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

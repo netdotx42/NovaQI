@@ -77,6 +77,9 @@ function ProductPage() {
             </div>
             <p className="mt-4 max-w-xl text-xs leading-relaxed text-mist">
               Whop shows the live price, tax and refund terms. {product.flow}
+              {product.tool?.href.startsWith("/tools/")
+                ? " The download on Whop is separate from My tools. This browser tool opens after one payment of $49, which covers all six tools."
+                : ""}
             </p>
           </div>
           <div className="rounded-lg border border-line bg-panel p-6">

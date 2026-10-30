@@ -48,7 +48,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link to="/library" className="transition hover:text-ink">
-            My Library
+            My tools
           </Link>
         </nav>
 
@@ -95,7 +95,7 @@ export function SiteHeader() {
             className="flex min-h-11 items-center text-sm text-ink"
             onClick={() => setOpen(false)}
           >
-            My Library
+            My tools
           </Link>
         </nav>
       ) : null}

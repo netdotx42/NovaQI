@@ -87,9 +87,9 @@ function Home() {
         </div>
         <Catalog />
         <p className="mt-6 max-w-2xl text-xs leading-relaxed text-mist">
-          Suggested launch prices in USD. Availability, final prices and purchase terms are shown
-          on Whop. Browser tools on this site run locally. Guides and source files ship with the
-          order.
+          Suggested launch prices in USD for the Whop downloads. The six browser tools open
+          together from My tools after one payment of $49. Guides and source files still ship with
+          the Whop order.
         </p>
       </section>
 
@@ -220,7 +220,7 @@ function Home() {
               to="/library"
               className="inline-flex min-h-12 items-center rounded-md border border-deep/30 px-5 text-sm font-semibold"
             >
-              Already purchased
+              My tools
             </Link>
           </div>
         </div>
