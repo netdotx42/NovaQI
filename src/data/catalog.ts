@@ -209,37 +209,6 @@ export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }
 
-export const bundles = [
-  {
-    code: "01",
-    name: "Trading Toolkit",
-    detail: "Execution Playbook + Risk Desk + Review Lab",
-    price: 59,
-    track: "Trading",
-  },
-  {
-    code: "02",
-    name: "Research + Discipline",
-    detail: "Strategy Validation + Discipline Operating System",
-    price: 69,
-    track: "Process",
-  },
-  {
-    code: "03",
-    name: "Crypto Collection",
-    detail: "Crypto Research Desk + Crypto Exposure Lab",
-    price: 69,
-    track: "Crypto",
-  },
-  {
-    code: "04",
-    name: "AI Developer Collection",
-    detail: "Agent Evaluation Kit + MCP Contract Lab",
-    price: 99,
-    track: "Development",
-  },
-] as const;
-
 export const faqs = [
   {
     q: "What am I buying?",

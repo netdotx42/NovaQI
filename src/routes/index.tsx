@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Catalog } from "@/components/catalog";
 import { Frame } from "@/components/frame";
-import { STORE_URL, bundles, faqs } from "@/data/catalog";
+import { STORE_URL, faqs } from "@/data/catalog";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -169,41 +169,6 @@ function Home() {
               cancelled. Paid access and delivery are not yet enabled.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-[11px] font-semibold tracking-[0.18em] text-mist">Better together</p>
-            <h2 className="font-display mt-3 text-4xl font-medium tracking-tight sm:text-5xl">
-              Build your stack.
-            </h2>
-          </div>
-          <p className="max-w-sm text-sm leading-relaxed text-mist">
-            Suggested collections for a complete workflow. Check Whop for whether a bundle is on
-            sale yet. Each tool can still be bought on its own.
-          </p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {bundles.map((bundle) => (
-            <article key={bundle.code} className="rounded-lg border border-line bg-panel p-5">
-              <p className="font-mono text-[11px] tracking-[0.16em] text-mint">
-                {bundle.code} / {bundle.track}
-              </p>
-              <h3 className="font-display mt-4 text-2xl font-medium tracking-tight">{bundle.name}</h3>
-              <p className="mt-2 min-h-12 text-sm leading-relaxed text-mist">{bundle.detail}</p>
-              <p className="font-display mt-4 text-4xl tabular-nums">${bundle.price}</p>
-              <a
-                href={STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-mint"
-              >
-                Explore on Whop
-              </a>
-            </article>
-          ))}
         </div>
       </section>
 
