@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --color-canvas: #020d09;
+  --color-panel: #0c241c;
+  --color-panel-2: #103028;
+  --color-ink: #ebfff6;
+  --color-mist: #a6c8b9;
+  --color-mint: #66ffd0;
+  --color-mint-hot: #b1ffe3;
+  --color-line: #24493a;
+  --color-deep: #052519;
+
+  --radius-card: 0.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(
+        ellipse at 85% 12%,
+        color-mix(in srgb, var(--color-mint) 14%, transparent),
+        transparent 42%
+      ),
+      var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-mint);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  .art-grid {
+    background-color: var(--color-panel);
+    background-image:
+      radial-gradient(
+        ellipse at 68% 72%,
+        color-mix(in srgb, var(--color-mint) 28%, transparent),
+        transparent 62%
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 29px,
+        color-mix(in srgb, var(--color-mint) 7%, transparent) 30px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 29px,
+        color-mix(in srgb, var(--color-mint) 8%, transparent) 30px
+      );
+  }
+
+  .art-grid-crypto {
+    background-image:
+      radial-gradient(
+        ellipse at 75% 80%,
+        color-mix(in srgb, var(--color-mint) 36%, #062319),
+        #062319 78%
+      );
+  }
+
+  .art-grid-developer {
+    background-image: radial-gradient(
+      ellipse at 70% 28%,
+      color-mix(in srgb, var(--color-mint) 22%, #071b16),
+      #071b16 80%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: #111;
+  }
+}
